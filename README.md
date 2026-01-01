@@ -67,6 +67,11 @@ Do frequent and volatile special teams workloads create pace driven fatigue that
 - Use ST_Shock_NonScore_w as the primary special teams shock exposure  
 - Keep ST_Shock_All_w and ST_Shock_ScoreLinked_w for robustness and diagnostics  
 
+### 5.5 Optional Step 5 validation and robustness additions
+- Confirm that joining schedules does not create duplicate team week rows and that all game weeks have a schedule game type  
+- Confirm there are no regular season game weeks with ST_Load_All_w equal to 0 for team seasons that have valid special teams data  
+- Optionally compute a rolling NonScore z score and rolling NonScore shock that only uses prior weeks as a robustness exposure to avoid lookahead  
+
 ## 6, Construct season to date volatility measures
 
 ### 6.1 For each team week w, use weeks 1 through w for that team and compute volatility per bucket
@@ -131,6 +136,10 @@ Do frequent and volatile special teams workloads create pace driven fatigue that
 - Inj_Off_Last_w equals Inj_Off_Next for week w minus 1  
 - Inj_Def_Last_w equals Inj_Def_Next for week w minus 1  
 
+### 9.7 Addendum to prevent roster churn noise in new injury counts
+- When computing new_injured_players_w_plus_1, restrict eligible players to those who were on the same team in week w using rosters_weekly week w  
+- If using a strict version, also require the player to be active in week w by using an active flag in rosters_weekly if available, or snap_counts week w greater than 0  
+
 ## 10, Build control variables per team week
 
 ### 10.1 From play and game stats
@@ -191,6 +200,13 @@ Do frequent and volatile special teams workloads create pace driven fatigue that
 ### 13.2 Include fixed effects
 - Team fixed effects to control for permanent team traits  
 - Week or season week fixed effects to control for league wide time trends  
+
+### 13.3 Addendum for blowout masking robustness
+- Include an interaction term ST_Shock_NonScore_w times Blowout_flag_w in the main specifications, while keeping ST_Shock_NonScore_w as a main effect  
+
+### 13.4 Addendum for practice intensity unobservables robustness
+- Cluster standard errors by team  
+- Optionally use team season fixed effects as a robustness check if team philosophy changes materially across seasons  
 
 ## 14, Fit Model A, defensive new injuries
 
@@ -346,4 +362,4 @@ Do frequent and volatile special teams workloads create pace driven fatigue that
 - the question  
 - the main empirical findings  
 - how they relate to cumulative workload and Article 21  
-- two or three concrete policy priorities for the NFLPA  
+- two or three concrete policy priorities for the NFLPA
