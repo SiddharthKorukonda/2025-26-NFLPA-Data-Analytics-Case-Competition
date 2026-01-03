@@ -5,3 +5,4 @@ pyarrow
 pandas
 jupyter
 matplotlib
+scikit-learn
