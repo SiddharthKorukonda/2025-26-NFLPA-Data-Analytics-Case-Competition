@@ -6,3 +6,6 @@ pandas
 jupyter
 matplotlib
 scikit-learn
+statsmodels
+numpy
+scipy
