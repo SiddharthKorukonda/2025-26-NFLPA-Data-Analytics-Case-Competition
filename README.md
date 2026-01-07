@@ -3,7 +3,7 @@
 ## 1, Define the research question
 
 ### 1.1 Write it down exactly so you never drift
-Do frequent and volatile special teams workloads create pace driven fatigue that increases injury risk for offensive and defensive players later in the season, and does Article 21 adequately protect players from this type of game intensity driven workload
+Do frequent and volatile special teams workloads create pace driven fatigue that increases injury risk for offensive and defensive players later in the season, and does Article 39 adequately protect players from this type of game intensity driven workload
 
 ## 2, Gather raw data
 
@@ -335,9 +335,9 @@ Do frequent and volatile special teams workloads create pace driven fatigue that
 ### 22.3 Scale key effects to league level
 - multiply per team week effects by number of team weeks in a season to estimate additional injuries attributable to NonScore special teams volatility and shocks  
 
-## 23, Connect findings to Article 21
+## 23, Connect findings to Article 39
 
-### 23.1 Summarize what Article 21 currently covers
+### 23.1 Summarize what Article 39 currently covers
 - practice workload  
 - meetings  
 - offseason and in season structured activities  
@@ -361,5 +361,5 @@ Do frequent and volatile special teams workloads create pace driven fatigue that
 ### 24.4 Write an executive summary that states
 - the question  
 - the main empirical findings  
-- how they relate to cumulative workload and Article 21  
+- how they relate to cumulative workload and Article 39  
 - two or three concrete policy priorities for the NFLPA
